@@ -1,0 +1,29 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title> {{ title | uppercase }}</mat-card-title>
+    <mat-card-subtitle>{{ subtitle | lowercase }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- <app-home></app-home> -->
+    <span>{{ todayDate | date : "fullDate" }}</span>
+    <br />
+    <span>{{ salary | currency : "EUR" }}</span>
+    <br />
+    <span>{{ salary | number : "1.2-2" }}</span
+    ><br />
+    <span>{{ salary / 100 | percent }}</span
+    ><br />
+    <span>{{ _obj | json }}</span
+    ><br />
+    <span>{{ title | reverse }}</span
+    ><br />
+    <input type="checkbox" [checked]="isDisabled" />
+    <input type="checkbox" checked="{{ isDisabled }}" />
+    <br />
+    <!-- <input (keyup)="updateTitle($event)" /> -->
+    <input [(ngModel)]="title" />
+    <br />
+    <button (click)="ChangeTitle()">click here</button>
+  </mat-card-content>
+  <mat-card-actions> </mat-card-actions>
+</mat-card>
