@@ -1,13 +1,30 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-customer',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MatButtonModule, RouterLink, FormsModule],
   templateUrl: './customer.component.html',
-  styleUrl: './customer.component.css'
+  styleUrl: './customer.component.css',
 })
 export class CustomerComponent {
-
+  userInput = '';
+  canNavigate() {
+    if (this.userInput !== '') {
+      if (
+        confirm(
+          'If you navigate your data is going to be lost! Do you want to continue?'
+        )
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return true;
+    }
+  }
 }

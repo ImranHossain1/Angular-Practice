@@ -18,7 +18,8 @@ export class HomeComponent {
   salary = 1200;
   _obj = { name: 'NT' };
 
-  isDisabled = false;
+  _class = 'inactive';
+  isDisabled = true;
   ChangeTitle() {
     this.title = 'Angular 18 updated';
   }

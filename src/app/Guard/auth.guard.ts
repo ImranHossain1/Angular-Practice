@@ -5,10 +5,10 @@ export const authGuard: CanActivateFn = (route, state) => {
   let router = inject(Router);
   if (route.url.length > 0) {
     let menu = route.url[0].path;
-    if (menu === 'customer') {
+    if (menu === 'about') {
       alert('You do not have access');
       // router.navigate(['about']);
-      router.navigateByUrl('/about');
+      router.navigateByUrl('/customer');
       return false;
     } else {
       return true;

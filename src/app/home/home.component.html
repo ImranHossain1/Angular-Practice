@@ -24,6 +24,11 @@
     <input [(ngModel)]="title" />
     <br />
     <button (click)="ChangeTitle()">click here</button>
+    <div>
+      <h2 [ngClass]="{ active: isDisabled, inactive: !isDisabled }">
+        Attribute Directive
+      </h2>
+    </div>
   </mat-card-content>
   <mat-card-actions> </mat-card-actions>
 </mat-card>
