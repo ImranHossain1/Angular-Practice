@@ -1,0 +1,40 @@
+{
+  "user": [
+    {
+      "id": "admin",
+      "name": "adminuser",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "suser",
+      "name": "Sales User",
+      "password": "test",
+      "role": "salesman"
+    },
+    {
+      "id": "imran",
+      "name": "imran",
+      "email": "imran@gmail.com",
+      "gender": "m",
+      "password": "123456",
+      "role": "supervisor"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "Cricket Bat",
+      "description": "High Quality we can use for leather ball",
+      "price": 1000,
+      "status": true
+    },
+    {
+      "id": 2,
+      "name": "Football",
+      "description": "High Quality we can use for leather ball",
+      "price": 1000,
+      "status": true
+    }
+  ]
+}

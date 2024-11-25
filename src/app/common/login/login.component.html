@@ -1,0 +1,55 @@
+<mat-card>
+  <mat-card-header>
+    <h2>Login</h2>
+  </mat-card-header>
+  <form
+    class="example-form"
+    #loginform="ngForm"
+    (ngSubmit)="ProceedLogin(loginform)"
+  >
+    <mat-card-content>
+      <mat-form-field class="example-full-width">
+        <mat-label>User Name</mat-label>
+        <input
+          matInput
+          required
+          placeholder="Username"
+          [(ngModel)]="_loginData.username"
+          #username="ngModel"
+          name="username"
+        />
+        <!-- <div *ngIf="username.invalid && username.touched" >
+          username is required
+        </div> -->
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input
+          required
+          matInput
+          placeholder="Password"
+          [(ngModel)]="_loginData.password"
+          #password="ngModel"
+          name="password"
+          type="password"
+        />
+        <!-- <div *ngIf="password.invalid && password.touched">
+          Password is required
+        </div> -->
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-raised-button color="primary">Login</button>
+
+      <a mat-raised-button color="accent" routerLink="/register">New User?</a>
+      <!-- <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="loginform.invalid"
+      >
+        Login
+      </button> -->
+    </mat-card-actions>
+  </form>
+</mat-card>

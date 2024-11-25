@@ -19,11 +19,24 @@ export class HomeComponent {
   _obj = { name: 'NT' };
 
   _class = 'inactive';
+  _color = 'red';
+  _font = '34';
   isDisabled = true;
+
+  isShow = false;
+
   ChangeTitle() {
     this.title = 'Angular 18 updated';
   }
   updateTitle(event: any) {
     this.title = event.target.value;
   }
+
+  ticketInfo = [
+    { id: 1, name: 'Angular', color: 'green' },
+    { id: 2, name: 'React', color: 'red' },
+    { id: 3, name: 'Next', color: 'blue' },
+  ];
+
+  _view = 'aboutss';
 }

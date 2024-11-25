@@ -29,6 +29,23 @@
         Attribute Directive
       </h2>
     </div>
+    <div *ngIf="isShow">
+      <h2 [ngStyle]="{ color: _color, 'font-size.px': _font }">
+        Attribute Directive
+      </h2>
+    </div>
+    <div
+      *ngFor="let item of ticketInfo"
+      [ngStyle]="{ 'background-color': item.color, color: 'white' }"
+    >
+      <span> Id: {{ item.id }}</span>
+      <h2>{{ item.name | uppercase }}</h2>
+    </div>
+    <div [ngSwitch]="_view">
+      <div *ngSwitchCase="'home'"><h2>this is home view</h2></div>
+      <div *ngSwitchCase="'about'"><h2>this is about view</h2></div>
+      <div *ngSwitchDefault><h2>this is default view</h2></div>
+    </div>
   </mat-card-content>
   <mat-card-actions> </mat-card-actions>
 </mat-card>

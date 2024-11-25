@@ -7,6 +7,9 @@ import { AddComponent } from './common/add/add.component';
 import { StatusComponent } from './common/status/status.component';
 import { authGuard } from './Guard/auth.guard';
 import { childauthGuard } from './Guard/childauth.guard';
+import { LoginComponent } from './common/login/login.component';
+import { RegisterComponent } from './common/register/register.component';
+import { ProductComponent } from './common/product/product.component';
 import { authDGuard } from './Guard/auth-d.guard';
 
 export const routes: Routes = [
@@ -18,6 +21,19 @@ export const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
+    path: 'product',
+    component: ProductComponent,
     canActivate: [authGuard],
   },
   {
@@ -45,6 +61,7 @@ export const routes: Routes = [
       { path: 'edit/:id', component: AddComponent },
     ],
   },
+
   {
     path: '**',
     component: StatusComponent,

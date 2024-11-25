@@ -1,0 +1,71 @@
+<mat-card>
+  <mat-card-header>
+    <h2>Registration</h2>
+  </mat-card-header>
+  <form
+    class="example-form"
+    [formGroup]="registerForm"
+    (ngSubmit)="ProceedRegister()"
+  >
+    <mat-card-content>
+      <mat-form-field class="example-full-width">
+        <mat-label>User Name</mat-label>
+        <input matInput placeholder="Username" formControlName="username" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email...." formControlName="email" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Password...."
+          formControlName="password"
+          type="password"
+        />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role">
+          @for (item of roles; track item) {
+          <mat-option [value]="item.value">{{ item.viewValue }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <mat-radio-group aria-label="Gender" formControlName="gender">
+          <mat-radio-button color="primary" value="m">Male</mat-radio-button>
+          <mat-radio-button color="primary" value="f">Female</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div>
+        <section class="example-section">
+          <mat-checkbox
+            color="primary"
+            class="example-margin"
+            formControlName="terms"
+            >Agree terms and Conditions!</mat-checkbox
+          >
+        </section>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-raised-button color="primary">Register</button>
+
+      <a mat-raised-button color="accent" routerLink="/login">Login</a>
+      <!-- <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="loginform.invalid"
+      >
+        Login
+      </button> -->
+    </mat-card-actions>
+  </form>
+</mat-card>
